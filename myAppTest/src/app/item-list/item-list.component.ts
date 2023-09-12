@@ -37,17 +37,17 @@ export class ItemListComponent {
     this.selectedItem = item;
   }
 
-  submitForm() {
-    if (!this.selectedItem.selected) {
-      this.selectedItem.selected = true;
-      if (this.selectedItem.type === 'Fruit') {
-        this.selectedItemsFruit.push(this.selectedItem);
+  submitForm(item: Item) {
+    if (!item.selected) {
+      item.selected = true;
+      if (item.type === 'Fruit') {
+        this.selectedItemsFruit.push(item);
       } else if (this.selectedItem.type === 'Vegetable') {
-        this.selectedItemsVegetable.push(this.selectedItem);
+        this.selectedItemsVegetable.push(item);
       }
     }
     setTimeout(() => {
-      this.deselectItem(this.selectedItem);
+      this.deselectItem(item);
     }, 5000);
   }
 
