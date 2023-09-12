@@ -58,12 +58,3 @@ app.get('/', async (req: Request, res: Response) => {
         res.status(500).json({ error: 'An error occurred while fetching data' });
       }
 });
-
-app.post('/api/data', (req: Request, res: Response) => {
-  const data = req.body;
-  res.json({ receivedData: data });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
